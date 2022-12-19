@@ -11,19 +11,23 @@ public class Animation {
 	private Double priceTicket = 15.00;
 	private Double costAnimation;
 	private Integer ticketsSold;
+	private Double taxOfAnimators = 35.00 / 100;
+
+	private Animator animator;
 
 	public Animation() {
 
 	}
 
 	public Animation(String nameAnimation, TypeAnimation typeAnimation, Double priceTicket, Double costAnimation,
-			Integer ticketsSold, Integer idAnimation) {
+			Integer ticketsSold, Integer idAnimation, Animator animator) {
 		this.nameAnimation = nameAnimation;
 		this.typeAnimation = typeAnimation;
 		this.priceTicket = priceTicket;
 		this.costAnimation = costAnimation;
 		this.ticketsSold = ticketsSold;
 		this.idAnimation = idAnimation;
+		this.animator = animator;
 	}
 
 	public String getNameAnimation() {
@@ -72,6 +76,20 @@ public class Animation {
 		return idAnimation;
 	}
 
+	public void setAnimator(Animator animator) {
+
+		this.animator = animator;
+
+	}
+
+	public Animator getAnimator() {
+		return animator;
+	}
+
+	public double getTaxOfAnimators() {
+		return taxOfAnimators;
+	}
+
 	public void ticketsPurchases(Integer ticketsSold) {
 		this.ticketsSold = ticketsSold;
 		profitAnimation = priceTicket * ticketsSold;
@@ -80,6 +98,14 @@ public class Animation {
 
 	public double gainAnimationLessCost() {
 		return profitAnimation - costAnimation;
+
+	}
+
+	public double EarningsOfAnimato() {
+		double sum = gainAnimationLessCost() * taxOfAnimators;
+		sum -= gainAnimationLessCost();
+		animator.setEarningsOfAnimator(sum);
+		return animator.getEarningsOfAnimator();
 
 	}
 

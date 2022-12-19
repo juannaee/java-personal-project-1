@@ -6,19 +6,12 @@ import java.util.List;
 public class AnimationCompany {
 
 	private static String companyName = "BI.universes_studioss";
-	private double profitFromAnimations;
-	private Double companyEarningsRate = 25.00;
+	private Double profitFromAnimations;
+	
 
 	List<Animation> listAnimation = new ArrayList<>();
 
 	public AnimationCompany() {
-
-	}
-
-	public AnimationCompany(double profitFromAnimations, Double companyEarningsRate) {
-
-		this.profitFromAnimations = profitFromAnimations;
-		this.companyEarningsRate = companyEarningsRate;
 
 	}
 
@@ -29,14 +22,6 @@ public class AnimationCompany {
 	public double getProfitFromAnimations() {
 
 		return profitFromAnimations;
-	}
-
-	public Double getCompanyEarningsRate() {
-		return companyEarningsRate;
-	}
-
-	public void setCompanyEarningsRate(Double companyEarningsRate) {
-		this.companyEarningsRate = companyEarningsRate;
 	}
 
 	public List<Animation> getListAnimation() {
