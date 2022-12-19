@@ -4,6 +4,7 @@ import entities.enums.TypeAnimation;
 
 public class Animation {
 
+	private Integer idAnimation;
 	private String nameAnimation;
 	private TypeAnimation typeAnimation;
 	private Double profitAnimation;
@@ -16,12 +17,13 @@ public class Animation {
 	}
 
 	public Animation(String nameAnimation, TypeAnimation typeAnimation, Double priceTicket, Double costAnimation,
-			Integer ticketsSold) {
+			Integer ticketsSold, Integer idAnimation) {
 		this.nameAnimation = nameAnimation;
 		this.typeAnimation = typeAnimation;
 		this.priceTicket = priceTicket;
 		this.costAnimation = costAnimation;
 		this.ticketsSold = ticketsSold;
+		this.idAnimation = idAnimation;
 	}
 
 	public String getNameAnimation() {
@@ -63,6 +65,11 @@ public class Animation {
 	public void setTicketsSold(Integer ticketsSold) {
 
 		this.ticketsSold = ticketsSold;
+
+	}
+
+	public Integer getIdAnaimation() {
+		return idAnimation;
 	}
 
 	public void ticketsPurchases(Integer ticketsSold) {
@@ -71,5 +78,9 @@ public class Animation {
 
 	}
 
-}
+	public double gainAnimationLessCost() {
+		return profitAnimation - costAnimation;
 
+	}
+
+}
