@@ -31,12 +31,13 @@ public class Program {
 			Integer idAnimation = sc.nextInt();
 
 			System.out.println("Animation name:");
+			sc.nextLine();
 			String animationName = sc.nextLine();
 
 			System.out.println("Type Animation:");
 			String typeAnimation = "";
 			System.out.println("options:");
-			System.out.printf("1 - 3D %n 2 - 2D %n 3 - STOP MOTION");
+			System.out.printf("1-3D%n2-2D %n3-STOP MOTION");
 			int opcaoMenu = sc.nextInt();
 
 			do {
@@ -45,21 +46,23 @@ public class Program {
 				case 1: {
 					System.out.println("You chose 3D");
 					typeAnimation = "_3D";
+					break;
 				}
 
 				case 2: {
 					System.out.println("You chose 2D");
 					typeAnimation = "_2D";
-
+					break;
 				}
 
 				case 3: {
 					System.out.println("You chose STOP MOTION");
 					typeAnimation = "STOPMOTION";
-
+					break;
 				}
 				default: {
 					System.out.println("invalid option try again!!");
+					break;
 				}
 
 				}
@@ -73,6 +76,7 @@ public class Program {
 			Integer ticketsSold = sc.nextInt();
 
 			System.out.println("what is the name of the animator?");
+			sc.nextLine();
 			String nameAnimator = sc.nextLine();
 
 			Animation animation = new Animation(animationName, TypeAnimation.valueOf(typeAnimation), costAnimation,
