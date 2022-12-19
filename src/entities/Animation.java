@@ -19,11 +19,10 @@ public class Animation {
 
 	}
 
-	public Animation(String nameAnimation, TypeAnimation typeAnimation, Double priceTicket, Double costAnimation,
+	public Animation(String nameAnimation, TypeAnimation typeAnimation, Double costAnimation,
 			Integer ticketsSold, Integer idAnimation, Animator animator) {
 		this.nameAnimation = nameAnimation;
 		this.typeAnimation = typeAnimation;
-		this.priceTicket = priceTicket;
 		this.costAnimation = costAnimation;
 		this.ticketsSold = ticketsSold;
 		this.idAnimation = idAnimation;
