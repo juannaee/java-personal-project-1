@@ -72,7 +72,7 @@ public class Animation {
 
 	}
 
-	public Integer getIdAnaimation() {
+	public Integer getIdAnimation() {
 		return idAnimation;
 	}
 
