@@ -43,9 +43,23 @@ public class AnimationCompany {
 		for (Animation objAnimation : listAnimation) {
 			sum += objAnimation.gainAnimationLessCost();
 		}
-		this.profitFromAnimations = sum;
-		return this.profitFromAnimations;
 
+		return sum;
+
+	}
+
+	public double companyEarnings() {
+		Double sum = 0.0;
+
+		for (Animation objAnimation : listAnimation) {
+			if(objAnimation.gainAnimationLessCost() > objAnimation.earningsOfAnimato()) {
+			sum += objAnimation.gainAnimationLessCost() - objAnimation.earningsOfAnimato();
+			}else {
+				sum += objAnimation.earningsOfAnimato() - objAnimation.gainAnimationLessCost();
+			}
+		}
+
+		return sum;
 	}
 
 	public String toString() {
@@ -53,7 +67,11 @@ public class AnimationCompany {
 		stb.append("Company Name: " + companyName + "\n");
 		stb.append("\n");
 		stb.append("List of animations: " + "\n");
-		stb.append(listAnimation);
+		stb.append(listAnimation + "\n");
+		stb.append("Profit from all animations: R$" + String.format("%.2f", profitAnimations()) + "\n");
+		stb.append("company Earnings: R$" + String.format("%.2f", companyEarnings()) + "\n");
+		stb.append("\n");
+		stb.append("--------------------------------------------------------" + "\n");
 
 		return stb.toString();
 	}

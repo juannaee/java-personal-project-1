@@ -95,7 +95,7 @@ public class Program {
 
 		}
 
-		
+		System.out.println(animationCompany);
 
 		sc.close();
 

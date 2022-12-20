@@ -98,15 +98,23 @@ public class Animation {
 
 	public double gainAnimationLessCost() {
 
-		return profitAnimation - costAnimation;
+		if (profitAnimation > costAnimation) {
+			return profitAnimation - costAnimation;
+		} else {
+			return costAnimation - profitAnimation;
+		}
 
 	}
 
-	public double EarningsOfAnimato() {
+	public double earningsOfAnimato() {
+
 		double sum = gainAnimationLessCost() * taxOfAnimators;
-		sum -= gainAnimationLessCost();
-		animator.setEarningsOfAnimator(sum);
-		return animator.getEarningsOfAnimator();
+		if (sum < gainAnimationLessCost()) {
+			sum = gainAnimationLessCost() - sum;
+		} else {
+			sum -= gainAnimationLessCost();
+		}
+		return sum;
 
 	}
 
@@ -117,21 +125,21 @@ public class Animation {
 		stb.append("Animation ID: " + idAnimation + "\n");
 		stb.append("Animation name: " + nameAnimation + "\n");
 		stb.append("Animation Type: " + typeAnimation + "\n");
-		stb.append("Animation Cost: " + costAnimation + "\n");
+		stb.append("Animation Cost: R$" + String.format("%.2f",costAnimation)+ "\n");
 		stb.append("Tickets Sold: " + ticketsSold + "\n");
-		stb.append("Animation Profit: " + profitAnimation + "\n");
+		stb.append("Animation Profit: R$" + String.format("%.2f",profitAnimation) + "\n");
 		if (costAnimation < gainAnimationLessCost()) {
-			stb.append("The animation made a profit of: RS$" + gainAnimationLessCost() + "\n");
+			stb.append("The animation made a profit of: R$" + String.format("%.2f", gainAnimationLessCost()) + "\n");
 		} else {
-			stb.append("The animation suffered from: R$" + gainAnimationLessCost() + "\n");
+			stb.append("The animation suffered from: R$" + String.format("%.2f", gainAnimationLessCost()) + "\n");
 		}
+		stb.append("Animator name:" + animator.getAnimatorName() + "\n");
+		stb.append("Animator gain: R$" + String.format("%.2f", earningsOfAnimato()) + "\n");
 		stb.append("\n");
 		stb.append("--------------------------------------------------------" + "\n");
 
 		return stb.toString();
 
 	}
-	
-	
 
 }

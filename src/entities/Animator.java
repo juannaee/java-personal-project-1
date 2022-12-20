@@ -1,10 +1,8 @@
 package entities;
 
-
-public class Animator  {
+public class Animator {
 
 	private String animatorName;
-	private Double earningsOfAnimator;
 
 	public Animator() {
 	}
@@ -22,13 +20,4 @@ public class Animator  {
 	public void setAnimatorName(String animatorName) {
 		this.animatorName = animatorName;
 	}
-
-	public Double getEarningsOfAnimator() {
-		return earningsOfAnimator;
-	}
-
-	public void setEarningsOfAnimator(Double earningsOfAnimator) {
-		this.earningsOfAnimator = earningsOfAnimator;
-	}
-	
 }
