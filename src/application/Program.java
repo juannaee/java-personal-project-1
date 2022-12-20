@@ -15,12 +15,14 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 
 		AnimationCompany animationCompany = new AnimationCompany();
-		System.out.println("Welcome, follow the next steps by steps");
-
+		Animation animation = new Animation();
 		System.out.println("Welcome to the company system:" + AnimationCompany.getCompanyName());
+		System.out.println();
+		
+		System.out.println("Welcome, follow the next steps by steps");
 		System.out.println("How many animations will be registered today?");
-
 		int numberOfAnimations = sc.nextInt();
+		System.out.println();
 
 		for (int i = 0; i < numberOfAnimations; i++) {
 			int aux = 1;
@@ -29,11 +31,13 @@ public class Program {
 
 			System.out.println("Animation ID:");
 			Integer idAnimation = sc.nextInt();
+			System.out.println();
 
 			System.out.println("Animation name:");
 			sc.nextLine();
 			String animationName = sc.nextLine();
-
+			System.out.println();
+			
 			System.out.println("Type Animation:");
 			String typeAnimation = "";
 			System.out.println("options:");
@@ -68,23 +72,31 @@ public class Program {
 				}
 
 			} while (opcaoMenu != 1 && opcaoMenu != 2 && opcaoMenu != 3);
+			System.out.println();
 
 			System.out.println("what was the total cost of the animation: ");
 			Double costAnimation = sc.nextDouble();
+			System.out.println();
 
 			System.out.println("How many tickets were sold?");
 			Integer ticketsSold = sc.nextInt();
+			Double profitAnimation = animation.ticketsPurchases(ticketsSold); 
+			System.out.println();
+			
 
 			System.out.println("what is the name of the animator?");
 			sc.nextLine();
 			String nameAnimator = sc.nextLine();
+			System.out.println();
 
-			Animation animation = new Animation(animationName, TypeAnimation.valueOf(typeAnimation), costAnimation,
-					ticketsSold, idAnimation, new Animator(nameAnimator));
+			animation = new Animation(animationName, TypeAnimation.valueOf(typeAnimation), costAnimation,
+					ticketsSold, idAnimation, new Animator(nameAnimator) , profitAnimation);
 
 			animationCompany.addAnimation(animation);
 
 		}
+		
+		System.out.println(animationCompany);
 
 		sc.close();
 
