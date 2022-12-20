@@ -80,7 +80,7 @@ public class Program {
 
 			System.out.println("How many tickets were sold?");
 			Integer ticketsSold = sc.nextInt();
-			Double profitAnimation = animation.ticketsPurchases(ticketsSold);
+			Double profitAnimation = animation.valueTicketsPurchases(ticketsSold);
 			System.out.println();
 
 			System.out.println("what is the name of the animator?");

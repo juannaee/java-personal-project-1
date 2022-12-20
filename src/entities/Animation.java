@@ -11,7 +11,7 @@ public class Animation {
 	private Double priceTicket = 15.00;
 	private Double costAnimation;
 	private Integer ticketsSold;
-	private Double taxOfAnimators = 35.00 / 100;
+	private Double taxOfAnimators = 75.00 / 100;
 
 	private Animator animator;
 
@@ -90,7 +90,7 @@ public class Animation {
 		return taxOfAnimators;
 	}
 
-	public Double ticketsPurchases(Integer ticketsSold) {
+	public Double valueTicketsPurchases(Integer ticketsSold) {
 		this.ticketsSold = ticketsSold;
 		return this.profitAnimation = ticketsSold * priceTicket;
 
