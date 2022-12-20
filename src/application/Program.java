@@ -18,7 +18,7 @@ public class Program {
 		Animation animation = new Animation();
 		System.out.println("Welcome to the company system:" + AnimationCompany.getCompanyName());
 		System.out.println();
-		
+
 		System.out.println("Welcome, follow the next steps by steps");
 		System.out.println("How many animations will be registered today?");
 		int numberOfAnimations = sc.nextInt();
@@ -37,7 +37,7 @@ public class Program {
 			sc.nextLine();
 			String animationName = sc.nextLine();
 			System.out.println();
-			
+
 			System.out.println("Type Animation:");
 			String typeAnimation = "";
 			System.out.println("options:");
@@ -80,23 +80,22 @@ public class Program {
 
 			System.out.println("How many tickets were sold?");
 			Integer ticketsSold = sc.nextInt();
-			Double profitAnimation = animation.ticketsPurchases(ticketsSold); 
+			Double profitAnimation = animation.ticketsPurchases(ticketsSold);
 			System.out.println();
-			
 
 			System.out.println("what is the name of the animator?");
 			sc.nextLine();
 			String nameAnimator = sc.nextLine();
 			System.out.println();
 
-			animation = new Animation(animationName, TypeAnimation.valueOf(typeAnimation), costAnimation,
-					ticketsSold, idAnimation, new Animator(nameAnimator) , profitAnimation);
+			animation = new Animation(animationName, TypeAnimation.valueOf(typeAnimation), costAnimation, ticketsSold,
+					idAnimation, new Animator(nameAnimator), profitAnimation);
 
 			animationCompany.addAnimation(animation);
 
 		}
+
 		
-		System.out.println(animationCompany);
 
 		sc.close();
 

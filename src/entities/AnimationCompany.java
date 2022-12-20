@@ -7,7 +7,6 @@ public class AnimationCompany {
 
 	private static String companyName = "BI.universes_studioss";
 	private Double profitFromAnimations;
-	
 
 	List<Animation> listAnimation = new ArrayList<>();
 
@@ -48,15 +47,14 @@ public class AnimationCompany {
 		return this.profitFromAnimations;
 
 	}
-	
+
 	public String toString() {
 		StringBuilder stb = new StringBuilder();
 		stb.append("Company Name: " + companyName + "\n");
 		stb.append("\n");
 		stb.append("List of animations: " + "\n");
 		stb.append(listAnimation);
-		
-		
+
 		return stb.toString();
 	}
 
